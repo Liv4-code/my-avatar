@@ -29,7 +29,7 @@ const Occupation = ({ formData }) => {
             return chef;
         } else if (formData.occupation === "developer") {
             return developer;
-        } else if (formData.occupation === "yoga") {
+        } else if (formData.occupation === "yoga instructor") {
             return yoga;
         } else {
             return smInfluencer;
