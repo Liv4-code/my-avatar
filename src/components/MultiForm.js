@@ -12,7 +12,7 @@ const MultiForm = () => {
         surname: "",
         gender: "",
         dob: "",
-        occupation: "",
+        occupation: "chef",
         faveColor: "",
     });
 

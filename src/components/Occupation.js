@@ -4,7 +4,9 @@ const Occupation = ({ formData, setFormData }) => {
     return (
         <div>
             <div className="form-group">
-                <label htmlFor="exampleFormControlSelect2">Occupation</label>
+                <label htmlFor="exampleFormControlSelect2">
+                    Select An Occupation
+                </label>
                 <select
                     value={formData.occupation}
                     onChange={(event) => {
@@ -16,9 +18,11 @@ const Occupation = ({ formData, setFormData }) => {
                     className="form-control"
                 >
                     <option value="chef">Chef</option>
-                    <option value="yoga">Yoga Instructor</option>
+                    <option value="yoga instructor">Yoga Instructor</option>
                     <option value="developer">Developer</option>
-                    <option value="smInfluence">Social Media Influencer</option>
+                    <option value="social-media influencer">
+                        Social Media Influencer
+                    </option>
                 </select>
             </div>
             <div className="form-group">
