@@ -1,23 +1,40 @@
 import React from "react";
 
-const Occupation = () => {
+const Occupation = ({ formData, setFormData }) => {
     return (
         <div>
             <div className="form-group">
-                <label for="exampleFormControlSelect2">Occupation</label>
+                <label htmlFor="exampleFormControlSelect2">Occupation</label>
                 <select
-                    multiple
+                    value={formData.occupation}
+                    onChange={(event) => {
+                        setFormData({
+                            ...formData,
+                            occupation: event.target.value,
+                        });
+                    }}
                     className="form-control"
-                    id="exampleFormControlSelect2"
                 >
-                    <option>Chef</option>
-                    <option>Yoga Instructor</option>
-                    <option>Developer</option>
-                    <option>Social Media Influencer</option>
+                    <option value="chef">Chef</option>
+                    <option value="yoga">Yoga Instructor</option>
+                    <option value="developer">Developer</option>
+                    <option value="smInfluence">Social Media Influencer</option>
                 </select>
             </div>
             <div className="form-group">
-                <input type="color" name="" value="" />
+                <label htmlFor="exampleFormControlSelect2">
+                    Choose Your Favorite Color
+                </label>
+                <input
+                    value={formData.faveColor}
+                    onChange={(event) => {
+                        setFormData({
+                            ...formData,
+                            faveColor: event.target.value,
+                        });
+                    }}
+                    type="color"
+                />
             </div>
         </div>
     );

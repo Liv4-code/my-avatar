@@ -1,8 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;1000&display=swap");
 
 h1 {
-    font-weight: 1000;
-    font-size: 58px;
+    /* position: relative;
+    top: 0; */
+    font-weight: 1000 !important;
+    font-size: 58px !important;
+    color: #3e3e3e;
 }
 
 .app {
@@ -13,11 +16,20 @@ h1 {
     width: 100vw;
     height: 100vh;
     font-family: "Nunito", sans-serif;
-    text-align: center;
-    background: rgb(204, 174, 238);
-    background: radial-gradient(
-        circle,
-        rgb(174, 238, 214) 31%,
-        rgba(66, 228, 173, 1) 100%
+    background-image: linear-gradient(
+        to left bottom,
+        #c78acf,
+        #f986b5,
+        #ff8f8e,
+        #ffa866,
+        #f4c94c
     );
 }
+
+/* .app::after {
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(54, 53, 53, 0.6);
+} */

@@ -1,0 +1,83 @@
+form {
+    width: 100%;
+    border-radius: 10px;
+    background-color: white;
+}
+
+/* input:focus,
+textarea {
+    outline: none !important;
+} */
+
+/* input,
+textarea {
+    outline: none !important;
+} */
+
+/* select:focus {
+    outline: none !important;
+} */
+
+.bar {
+    height: 10px;
+    width: 100%;
+    background-color: rgb(234, 234, 234);
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+}
+
+.bar__progress-bar {
+    height: 10px;
+    background-color: #3e3e3e;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.form-display {
+    padding: 30px;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .form-display > div {
+    padding: 30px;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+} */
+
+.form-group {
+    margin: 10px 0 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.step-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.step-buttons > button {
+    background-color: #3e3e3e;
+    color: white;
+    outline: none !important;
+}
+
+.step-buttons > button:hover {
+    background-color: #545454;
+    color: white;
+    outline: none !important;
+}
+
+@media (min-width: 724px) {
+    form {
+        width: 500px;
+    }
+}
