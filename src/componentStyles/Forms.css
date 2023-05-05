@@ -27,20 +27,11 @@ form {
     animation: tipFade;
     animation-duration: 2s;
     animation-fill-mode: forwards;
-    animation-delay: 1s;
+    animation-delay: 300ms;
 }
 
 .form-display {
     height: 60vh;
-}
-
-.form-group {
-    margin: 20px 0 20px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
 }
 
 .error-message {
@@ -73,6 +64,10 @@ form {
 
 .age-output {
     border-bottom: 1px solid #3e3e3e;
+}
+
+.react-colorful {
+    height: 140px !important;
 }
 
 @keyframes tipFade {

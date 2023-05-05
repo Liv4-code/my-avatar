@@ -1,6 +1,4 @@
 import React from "react";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 
 const Gender = ({ formData, setFormData }) => {
     const convertToYearsAgo = (date) => {
@@ -51,14 +49,15 @@ const Gender = ({ formData, setFormData }) => {
             </div>
             <div className="form-check d-flex flex-column justify-content-center align-items-center p-0 mt-5">
                 <label className="py-2">Provide A Date Of Birth</label>
-                <DatePicker
+                <input
+                    type="date"
                     value={formData.dob}
-                    onChange={(date) => {
+                    onChange={(event) => {
                         setFormData({
                             ...formData,
-                            dob: date,
+                            dob: event.target.value,
                         });
-                        convertToYearsAgo(date);
+                        convertToYearsAgo(event.target.value);
                     }}
                 />
             </div>

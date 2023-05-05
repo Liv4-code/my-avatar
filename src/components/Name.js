@@ -4,7 +4,7 @@ import "../componentStyles/Forms.css";
 const Name = ({ formData, setFormData, error }) => {
     return (
         <div className="name-inputs d-flex flex-column justify-content-center align-items-center">
-            <div className="form-group">
+            <div className="form-group d-flex flex-column justify-content-center align-items-center my-4">
                 <input
                     value={formData.firstName}
                     onChange={(event) => {
@@ -18,7 +18,7 @@ const Name = ({ formData, setFormData, error }) => {
                     placeholder="First Name"
                 />
             </div>
-            <div className="form-group">
+            <div className="form-group d-flex flex-column justify-content-center align-items-center my-4">
                 <input
                     value={formData.surname}
                     onChange={(event) => {

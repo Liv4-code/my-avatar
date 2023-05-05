@@ -13,7 +13,7 @@ const Occupation = ({ formData }) => {
     const occupationBlurbs = [
         "whipping up tasty treats!",
         "running into errors.",
-        "turning upward dogs downwards.",
+        "turning upward dogs, downwards.",
         "vlogging and veganism.",
     ];
 
@@ -147,8 +147,8 @@ const Occupation = ({ formData }) => {
                 </div>
                 <p>
                     Meet your Avatar {formData.firstName} {formData.surname}. A{" "}
-                    {formData.occupation} with a passion for{" "}
-                    {setOccupationBlurb()}
+                    {formData.yearsOld + ` year old`} {formData.occupation} with
+                    a passion for {setOccupationBlurb()}
                 </p>
             </div>
         </div>

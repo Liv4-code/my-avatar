@@ -1,9 +1,12 @@
 import React from "react";
+import { HexColorPicker } from "react-colorful";
+// Used to make the color picker input visually appealing
+// providing for a better user experience
 
 const Occupation = ({ formData, setFormData }) => {
     return (
         <div className="d-flex flex-column justify-content-center align-items-center">
-            <div className="form-group">
+            <div className="form-group d-flex flex-column justify-content-center align-items-center my-4">
                 <label htmlFor="exampleFormControlSelect2">
                     Select An Occupation
                 </label>
@@ -25,19 +28,18 @@ const Occupation = ({ formData, setFormData }) => {
                     </option>
                 </select>
             </div>
-            <div className="form-group">
+            <div className="form-group d-flex flex-column justify-content-center align-items-center my-4">
                 <label htmlFor="exampleFormControlSelect2">
                     Choose Your Favorite Color
                 </label>
-                <input
-                    value={formData.faveColor}
-                    onChange={(event) => {
+                <HexColorPicker
+                    color={formData.faveColor}
+                    onChange={(color) => {
                         setFormData({
                             ...formData,
-                            faveColor: event.target.value,
+                            faveColor: color,
                         });
                     }}
-                    type="color"
                 />
             </div>
         </div>
