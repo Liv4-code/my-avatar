@@ -2,6 +2,11 @@ p {
     text-align: center;
 }
 
+.avatar {
+    position: relative;
+    top: 4%;
+}
+
 .avatar__body {
     display: flex;
     flex-direction: column;

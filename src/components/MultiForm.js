@@ -71,11 +71,13 @@ const MultiForm = () => {
             </div>
             {currentPage === 1 && (
                 <div className="header">
-                    <h5>Let's start by giving your avatar a name</h5>
+                    <h5 className="text-center">
+                        Let's start by giving your avatar a name
+                    </h5>
                 </div>
             )}
 
-            <div className="form-display d-flex flex-column justify-content-center align-items-center">
+            <div className="form-display d-flex flex-column justify-content-center align-items-center p-5">
                 {displayPage()}
             </div>
             <div className="step-buttons">

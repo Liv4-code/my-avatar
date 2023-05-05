@@ -2,7 +2,7 @@ import React from "react";
 
 const Occupation = ({ formData, setFormData }) => {
     return (
-        <div>
+        <div className="d-flex flex-column justify-content-center align-items-center">
             <div className="form-group">
                 <label htmlFor="exampleFormControlSelect2">
                     Select An Occupation

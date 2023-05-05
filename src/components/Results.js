@@ -14,7 +14,7 @@ const Occupation = ({ formData }) => {
         "whipping up tasty treats!",
         "running into errors.",
         "turning upward dogs downwards.",
-        "influencing the masses.",
+        "vlogging and veganism.",
     ];
 
     const compileAvatarTop = () => {
