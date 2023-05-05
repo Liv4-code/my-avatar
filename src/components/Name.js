@@ -4,6 +4,7 @@ import "../componentStyles/Forms.css";
 const Name = ({ formData, setFormData, error }) => {
     return (
         <div className="name-inputs d-flex flex-column justify-content-center align-items-center">
+            {/* Name text inputs */}
             <div className="form-group d-flex flex-column justify-content-center align-items-center my-4">
                 <input
                     value={formData.firstName}

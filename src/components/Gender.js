@@ -1,12 +1,12 @@
 import React from "react";
 
 const Gender = ({ formData, setFormData }) => {
+    // Function converts date value from date picker input
+    // and converts it to number of years ago based on current date
     const convertToYearsAgo = (date) => {
-        console.log(date);
         const now = new Date().getFullYear();
         const selectedDate = new Date(date).getFullYear();
         const yearsAgo = now - selectedDate;
-        console.log(yearsAgo);
         setFormData({
             ...formData,
             yearsOld: yearsAgo,
@@ -15,7 +15,8 @@ const Gender = ({ formData, setFormData }) => {
 
     return (
         <div>
-            <div className="form-check d-flex align-items-center py-3">
+            {/* Gender radio inputs */}
+            <div className="form-check radio d-flex align-items-center py-3">
                 <input
                     value="Male"
                     checked={formData.gender === "Male"}
@@ -27,11 +28,11 @@ const Gender = ({ formData, setFormData }) => {
                     }}
                     className="form-check-input"
                     type="radio"
-                    name="exampleRadios"
+                    name="gender"
                 />
                 <label className="mx-4">Male</label>
             </div>
-            <div className="form-check d-flex align-items-center py-3 mb-5">
+            <div className="form-check radio d-flex align-items-center py-3 mb-5">
                 <input
                     value="Female"
                     checked={formData.gender === "Female"}
@@ -43,10 +44,11 @@ const Gender = ({ formData, setFormData }) => {
                     }}
                     className="form-check-input"
                     type="radio"
-                    name="exampleRadios"
+                    name="gender"
                 />
                 <label className="mx-4">Female</label>
             </div>
+            {/* DOB date picker */}
             <div className="form-check d-flex flex-column justify-content-center align-items-center p-0 mt-5">
                 <label className="py-2">Provide A Date Of Birth</label>
                 <input
@@ -61,6 +63,7 @@ const Gender = ({ formData, setFormData }) => {
                     }}
                 />
             </div>
+            {/* Output for displaying how many years old avatar will be based on DOB selected */}
             <div className="text-center age-output mt-4">
                 {formData.yearsOld + ` Years Old`}
             </div>

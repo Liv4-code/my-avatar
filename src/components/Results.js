@@ -18,7 +18,6 @@ const Occupation = ({ formData }) => {
     ];
 
     const compileAvatarTop = () => {
-        console.log(formData.yearsOld);
         // Compiling the top of the avatar
         if (formData.gender === "Female" && formData.yearsOld > 50) {
             return oldFHead;
@@ -145,8 +144,9 @@ const Occupation = ({ formData }) => {
                         </svg>
                     </div>
                 </div>
+                {/* Character blurb */}
                 <p>
-                    Meet your Avatar {formData.firstName} {formData.surname}. A{" "}
+                    Meet your avatar {formData.firstName} {formData.surname}. A{" "}
                     {formData.yearsOld + ` year old`} {formData.occupation} with
                     a passion for {setOccupationBlurb()}
                 </p>

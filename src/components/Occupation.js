@@ -6,10 +6,9 @@ import { HexColorPicker } from "react-colorful";
 const Occupation = ({ formData, setFormData }) => {
     return (
         <div className="d-flex flex-column justify-content-center align-items-center">
+            {/* Occupation select input */}
             <div className="form-group d-flex flex-column justify-content-center align-items-center my-4">
-                <label htmlFor="exampleFormControlSelect2">
-                    Select An Occupation
-                </label>
+                <label>Select An Occupation</label>
                 <select
                     value={formData.occupation}
                     onChange={(event) => {
@@ -28,10 +27,9 @@ const Occupation = ({ formData, setFormData }) => {
                     </option>
                 </select>
             </div>
+            {/* Color picker made with react-colorful package */}
             <div className="form-group d-flex flex-column justify-content-center align-items-center my-4">
-                <label htmlFor="exampleFormControlSelect2">
-                    Choose Your Favorite Color
-                </label>
+                <label>Choose Your Favorite Color</label>
                 <HexColorPicker
                     color={formData.faveColor}
                     onChange={(color) => {

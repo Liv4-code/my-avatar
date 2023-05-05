@@ -5,6 +5,7 @@ import Gender from "./Gender";
 import Occupation from "./Occupation";
 import Results from "./Results";
 
+// Parent form component that will house all form steps
 const MultiForm = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [formData, setFormData] = useState({
@@ -69,22 +70,24 @@ const MultiForm = () => {
                     }}
                 ></div>
             </div>
+            {/* Intro displayed on first step of form */}
             {currentPage === 1 && (
                 <div className="header">
                     <h5 className="text-center">
-                        Let's start by giving your avatar a name
+                        Start by giving your avatar a name.
                     </h5>
                 </div>
             )}
-
+            {/* Where each form step gets rendered */}
             <div className="form-display d-flex flex-column justify-content-center align-items-center p-5">
                 {displayPage()}
             </div>
-            <div className="step-buttons">
+            {/* Prev, Next & Submit buttons */}
+            <div className="step-buttons d-flex justify-content-between p-4">
                 <button
                     disabled={currentPage === 1}
                     type="button"
-                    className="btn"
+                    className="btn text-light"
                     onClick={() => setCurrentPage(currentPage - 1)}
                 >
                     Prev
@@ -92,7 +95,7 @@ const MultiForm = () => {
                 <button
                     style={{ display: currentPage === 4 ? "none" : "block" }}
                     type="button"
-                    className="btn"
+                    className="btn text-light"
                     onClick={handleClick}
                 >
                     {currentPage === 3 ? "View Avatar" : "Next"}
