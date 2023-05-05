@@ -8,6 +8,12 @@ p {
 }
 
 .avatar__body {
+    opacity: 0;
+    animation-name: displayAvatar;
+    animation-duration: 2s;
+    animation-delay: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -55,4 +61,13 @@ p {
     bottom: 18px;
     left: 7px;
     z-index: 0;
+}
+
+@keyframes displayAvatar {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
 }

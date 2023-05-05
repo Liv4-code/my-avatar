@@ -18,6 +18,7 @@ const MultiForm = () => {
         faveColor: "",
     });
     const [error, setError] = useState("");
+    const [hideSpinner, setHideSpinner] = useState("");
 
     // When user clicks next button, check if both name fields are filled out
     // If not set the error message that will be displayed in the Name component
@@ -30,6 +31,12 @@ const MultiForm = () => {
         } else if (formData.firstName && formData.surname) {
             setError(null);
             setCurrentPage(currentPage + 1);
+        }
+
+        if (currentPage === 3) {
+            setTimeout(() => {
+                setHideSpinner("none");
+            }, 2500);
         }
     };
 
@@ -49,7 +56,7 @@ const MultiForm = () => {
         } else if (currentPage === 3) {
             return <Occupation formData={formData} setFormData={setFormData} />;
         } else {
-            return <Results formData={formData} />;
+            return <Results formData={formData} hideSpinner={hideSpinner} />;
         }
     };
 
@@ -87,15 +94,18 @@ const MultiForm = () => {
                 <button
                     disabled={currentPage === 1}
                     type="button"
-                    className="btn text-light"
-                    onClick={() => setCurrentPage(currentPage - 1)}
+                    className="btn"
+                    onClick={() => {
+                        setCurrentPage(currentPage - 1);
+                        setHideSpinner("block");
+                    }}
                 >
                     Prev
                 </button>
                 <button
                     style={{ display: currentPage === 4 ? "none" : "block" }}
                     type="button"
-                    className="btn text-light"
+                    className="btn"
                     onClick={handleClick}
                 >
                     {currentPage === 3 ? "View Avatar" : "Next"}

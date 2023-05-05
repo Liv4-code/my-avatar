@@ -41,6 +41,7 @@ form {
 
 .step-buttons > button {
     background-color: #3e3e3e;
+    color: white;
     outline: none !important;
     box-shadow: rgba(0, 0, 0, 0.3) -3px 3px 1px;
     transition: 50ms linear;
@@ -49,6 +50,7 @@ form {
 
 .step-buttons > button:hover {
     background-color: #3e3e3e;
+    color: white;
     outline: none !important;
     transform: translateX(-1px) translateY(1px);
     box-shadow: rgba(0, 0, 0, 0.3) -1px 1px 1px;

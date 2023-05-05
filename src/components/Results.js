@@ -9,13 +9,26 @@ import developer from "../images/developer.png";
 import yoga from "../images/yoga.png";
 import smInfluencer from "../images/social-media.png";
 
-const Occupation = ({ formData }) => {
+const Occupation = ({ formData, hideSpinner }) => {
     const occupationBlurbs = [
         "whipping up tasty treats!",
         "running into errors.",
         "turning upward dogs, downwards.",
         "vlogging and veganism.",
     ];
+
+    const setOccupationBlurb = () => {
+        // Displaying different phrases based on occupation selected
+        if (formData.occupation === "chef") {
+            return occupationBlurbs[0];
+        } else if (formData.occupation === "developer") {
+            return occupationBlurbs[1];
+        } else if (formData.occupation === "yoga instructor") {
+            return occupationBlurbs[2];
+        } else {
+            return occupationBlurbs[3];
+        }
+    };
 
     const compileAvatarTop = () => {
         // Compiling the top of the avatar
@@ -43,21 +56,18 @@ const Occupation = ({ formData }) => {
         }
     };
 
-    const setOccupationBlurb = () => {
-        // Displaying different phrases based on occupation selected
-        if (formData.occupation === "chef") {
-            return occupationBlurbs[0];
-        } else if (formData.occupation === "developer") {
-            return occupationBlurbs[1];
-        } else if (formData.occupation === "yoga instructor") {
-            return occupationBlurbs[2];
-        } else {
-            return occupationBlurbs[3];
-        }
-    };
-
     return (
         <div className="avatar">
+            <div className="d-flex flex-column justify-content-center align-items-center">
+                <div
+                    style={{ display: hideSpinner }}
+                    className="spinner-border"
+                    role="status"
+                ></div>
+                <span style={{ display: hideSpinner }} class="sr-only">
+                    Building Avatar...
+                </span>
+            </div>
             <div className="avatar__body">
                 <div>
                     <div className="head">
