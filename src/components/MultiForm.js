@@ -6,19 +6,43 @@ import Occupation from "./Occupation";
 import Results from "./Results";
 
 const MultiForm = () => {
-    let [currentPage, setCurrentPage] = useState(1);
-    let [formData, setFormData] = useState({
+    const [currentPage, setCurrentPage] = useState(1);
+    const [formData, setFormData] = useState({
         firstName: "",
         surname: "",
         gender: "",
         dob: "",
+        yearsOld: 0,
         occupation: "chef",
         faveColor: "",
     });
+    const [error, setError] = useState("");
 
+    // When user clicks next button, check if both name fields are filled out
+    // If not set the error message that will be displayed in the Name component
+    const handleClick = () => {
+        // Name input validation: If first or last name not filled out
+        if (!formData.firstName || !formData.surname) {
+            setError(
+                "Make your Avatar feel special by giving them a full name!"
+            );
+        } else if (formData.firstName && formData.surname) {
+            setError(null);
+            setCurrentPage(currentPage + 1);
+        }
+    };
+
+    // Displaying form steps depending on "currentPage" state changed by step button clicks
     const displayPage = () => {
         if (currentPage === 1) {
-            return <Name formData={formData} setFormData={setFormData} />;
+            return (
+                <Name
+                    formData={formData}
+                    setFormData={setFormData}
+                    error={error}
+                    setError={setError}
+                />
+            );
         } else if (currentPage === 2) {
             return <Gender formData={formData} setFormData={setFormData} />;
         } else if (currentPage === 3) {
@@ -26,11 +50,6 @@ const MultiForm = () => {
         } else {
             return <Results formData={formData} />;
         }
-    };
-
-    const submitForm = () => {
-        console.log(formData);
-        return "Submit";
     };
 
     return (
@@ -41,14 +60,24 @@ const MultiForm = () => {
                     style={{
                         width:
                             currentPage === 1
-                                ? "33%"
+                                ? "25%"
                                 : currentPage === 2
-                                ? "67%"
+                                ? "50%"
+                                : currentPage === 3
+                                ? "75%"
                                 : "100%",
                     }}
                 ></div>
             </div>
-            <div className="form-display">{displayPage()}</div>
+            {currentPage === 1 && (
+                <div className="header">
+                    <h5>Let's start by giving your avatar a name</h5>
+                </div>
+            )}
+
+            <div className="form-display d-flex flex-column justify-content-center align-items-center">
+                {displayPage()}
+            </div>
             <div className="step-buttons">
                 <button
                     disabled={currentPage === 1}
@@ -62,12 +91,9 @@ const MultiForm = () => {
                     style={{ display: currentPage === 4 ? "none" : "block" }}
                     type="button"
                     className="btn"
-                    onClick={() => {
-                        setCurrentPage(currentPage + 1);
-                        // submitForm();
-                    }}
+                    onClick={handleClick}
                 >
-                    {currentPage === 3 ? submitForm() : "Next"}
+                    {currentPage === 3 ? "View Avatar" : "Next"}
                 </button>
             </div>
         </form>

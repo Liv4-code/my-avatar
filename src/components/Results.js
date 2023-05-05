@@ -10,16 +10,24 @@ import yoga from "../images/yoga.png";
 import smInfluencer from "../images/social-media.png";
 
 const Occupation = ({ formData }) => {
+    const occupationBlurbs = [
+        "whipping up tasty treats!",
+        "running into errors.",
+        "turning upward dogs downwards.",
+        "influencing the masses.",
+    ];
+
     const compileAvatarTop = () => {
+        console.log(formData.yearsOld);
         // Compiling the top of the avatar
-        if (formData.gender === "Male") {
-            return mHead;
-        } else if (formData.gender === "Female") {
-            return fHead;
-        } else if (formData.gender === "Male" && formData.dob) {
-            return oldMHead;
-        } else {
+        if (formData.gender === "Female" && formData.yearsOld > 50) {
             return oldFHead;
+        } else if (formData.gender === "Male" && formData.yearsOld > 50) {
+            return oldMHead;
+        } else if (formData.gender === "Female" && formData.yearsOld < 50) {
+            return fHead;
+        } else {
+            return mHead;
         }
     };
 
@@ -36,10 +44,18 @@ const Occupation = ({ formData }) => {
         }
     };
 
-    // const compileAvatarBottom = () => {
-    //     // Compiling the bottom of the avatar
-
-    // };
+    const setOccupationBlurb = () => {
+        // Displaying different phrases based on occupation selected
+        if (formData.occupation === "chef") {
+            return occupationBlurbs[0];
+        } else if (formData.occupation === "developer") {
+            return occupationBlurbs[1];
+        } else if (formData.occupation === "yoga instructor") {
+            return occupationBlurbs[2];
+        } else {
+            return occupationBlurbs[3];
+        }
+    };
 
     return (
         <div className="avatar">
@@ -131,7 +147,8 @@ const Occupation = ({ formData }) => {
                 </div>
                 <p>
                     Meet your Avatar {formData.firstName} {formData.surname}. A{" "}
-                    {formData.occupation} with a passion for ...
+                    {formData.occupation} with a passion for{" "}
+                    {setOccupationBlurb()}
                 </p>
             </div>
         </div>

@@ -1,9 +1,23 @@
 import React from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const Gender = ({ formData, setFormData }) => {
+    const convertToYearsAgo = (date) => {
+        console.log(date);
+        const now = new Date().getFullYear();
+        const selectedDate = new Date(date).getFullYear();
+        const yearsAgo = now - selectedDate;
+        console.log(yearsAgo);
+        setFormData({
+            ...formData,
+            yearsOld: yearsAgo,
+        });
+    };
+
     return (
         <div>
-            <div className="form-check">
+            <div className="form-check d-flex align-items-center py-3">
                 <input
                     value="Male"
                     checked={formData.gender === "Male"}
@@ -17,11 +31,9 @@ const Gender = ({ formData, setFormData }) => {
                     type="radio"
                     name="exampleRadios"
                 />
-                <label className="form-check-label" htmlFor="exampleRadios1">
-                    Male
-                </label>
+                <label className="mx-4">Male</label>
             </div>
-            <div className="form-check">
+            <div className="form-check d-flex align-items-center py-3 mb-5">
                 <input
                     value="Female"
                     checked={formData.gender === "Female"}
@@ -35,21 +47,23 @@ const Gender = ({ formData, setFormData }) => {
                     type="radio"
                     name="exampleRadios"
                 />
-                <label className="form-check-label" htmlFor="exampleRadios2">
-                    Female
-                </label>
+                <label className="mx-4">Female</label>
             </div>
-            <div className="form-check">
-                <input
+            <div className="form-check d-flex flex-column justify-content-center align-items-center p-0 mt-5">
+                <label className="py-2">Provide A Date Of Birth</label>
+                <DatePicker
                     value={formData.dob}
-                    onChange={(event) => {
+                    onChange={(date) => {
                         setFormData({
                             ...formData,
-                            dob: event.target.value,
+                            dob: date,
                         });
+                        convertToYearsAgo(date);
                     }}
-                    type="date"
                 />
+            </div>
+            <div className="text-center age-output mt-4">
+                {formData.yearsOld + ` Years Old`}
             </div>
         </div>
     );

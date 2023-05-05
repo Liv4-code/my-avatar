@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;1000&display=swap");
 
 h1 {
-    /* position: relative;
-    top: 0; */
     font-weight: 1000 !important;
     font-size: 58px !important;
     color: #3e3e3e;
@@ -18,18 +16,8 @@ h1 {
     font-family: "Nunito", sans-serif;
     background-image: linear-gradient(
         to left bottom,
-        #c78acf,
-        #f986b5,
-        #ff8f8e,
-        #ffa866,
-        #f4c94c
+        #f6f6f6,
+        #c2c2c2,
+        #6b6b6b
     );
 }
-
-/* .app::after {
-    content: "";
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(54, 53, 53, 0.6);
-} */

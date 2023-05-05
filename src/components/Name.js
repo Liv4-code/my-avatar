@@ -1,9 +1,9 @@
 import React from "react";
 import "../componentStyles/Forms.css";
 
-const Name = ({ formData, setFormData }) => {
+const Name = ({ formData, setFormData, error }) => {
     return (
-        <div>
+        <div className="name-inputs d-flex flex-column justify-content-center align-items-center">
             <div className="form-group">
                 <input
                     value={formData.firstName}
@@ -32,6 +32,7 @@ const Name = ({ formData, setFormData }) => {
                     placeholder="Surname"
                 />
             </div>
+            {error && <p className="error-message">{error}</p>}
         </div>
     );
 };

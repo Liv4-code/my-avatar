@@ -2,21 +2,9 @@ form {
     width: 100%;
     border-radius: 10px;
     background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.4) 0px 6px 12px -2px,
+        rgba(0, 0, 0, 0.5) 0px 3px 7px -3px;
 }
-
-/* input:focus,
-textarea {
-    outline: none !important;
-} */
-
-/* input,
-textarea {
-    outline: none !important;
-} */
-
-/* select:focus {
-    outline: none !important;
-} */
 
 .bar {
     height: 10px;
@@ -33,29 +21,33 @@ textarea {
     border-top-right-radius: 20px;
 }
 
+.header {
+    position: absolute;
+    right: 200px;
+    opacity: 0;
+    animation: tipFade;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+}
+
 .form-display {
     padding: 30px;
     height: 60vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
-/* .form-display > div {
-    padding: 30px;
-    height: 30vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-} */
-
 .form-group {
-    margin: 10px 0 10px 0;
+    margin: 20px 0 20px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 80%;
+}
+
+.error-message {
+    color: rgb(221, 33, 33);
+    font-size: 14px;
 }
 
 .step-buttons {
@@ -68,12 +60,33 @@ textarea {
     background-color: #3e3e3e;
     color: white;
     outline: none !important;
+    box-shadow: rgba(0, 0, 0, 0.3) -3px 3px 1px;
+    transition: 50ms linear;
+    animation-direction: reverse;
 }
 
 .step-buttons > button:hover {
-    background-color: #545454;
+    background-color: #3e3e3e;
     color: white;
     outline: none !important;
+    transform: translateX(-1px) translateY(1px);
+    box-shadow: rgba(0, 0, 0, 0.3) -1px 1px 1px;
+}
+
+.age-output {
+    border-bottom: 1px solid #3e3e3e;
+}
+
+@keyframes tipFade {
+    from {
+        opacity: 0%;
+        top: 150px;
+    }
+
+    to {
+        opacity: 100%;
+        top: 220px;
+    }
 }
 
 @media (min-width: 724px) {
