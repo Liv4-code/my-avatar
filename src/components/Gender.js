@@ -53,7 +53,6 @@ const Gender = ({ formData, setFormData }) => {
                 <label className="py-2">Provide A Date Of Birth</label>
                 <input
                     type="date"
-                    value={formData.dob}
                     onChange={(event) => {
                         setFormData({
                             ...formData,
